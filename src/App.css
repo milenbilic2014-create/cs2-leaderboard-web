@@ -1,0 +1,349 @@
+.wrapper {
+    width: 100%;
+    max-width: 820px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-box {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.cs2-logo {
+    font-family: 'Teko', sans-serif;
+    font-size: 5rem;
+    line-height: 0.8;
+    font-weight: 700;
+    letter-spacing: 3px;
+    background: linear-gradient(180deg, #ffffff 30%, #a5b4fc 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    position: relative;
+    display: inline-block;
+}
+
+.cs2-title {
+    font-family: 'Teko', sans-serif;
+    font-size: 4rem;
+    line-height: 0.9;
+    font-weight: 700;
+    letter-spacing: 6px;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.weapons-divider {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 10px;
+    color: #ff7700;
+    font-size: 1.2rem;
+    opacity: 0.85;
+}
+
+.board-card {
+    width: 100%;
+    background: rgba(10, 19, 38, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 119, 0, 0.3);
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6),
+        inset 0 0 15px rgba(255, 119, 0, 0.05);
+    overflow: hidden;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: rgba(15, 26, 50, 0.9);
+    color: #ff9d42;
+    font-family: 'Teko', sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 12px 16px;
+    border-bottom: 2px solid rgba(255, 119, 0, 0.4);
+    font-weight: 700;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+td {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+tr {
+    transition: background 0.2s ease;
+}
+
+tbody tr:hover {
+    background: rgba(255, 119, 0, 0.08);
+}
+
+.rank-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rank-badge {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Teko', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.rank-1 {
+    background: linear-gradient(135deg, #ffe066 0%, #f59e0b 100%);
+    border: 2px solid #fff;
+    box-shadow: 0 0 12px rgba(245, 158, 11, 0.6);
+}
+
+.rank-2 {
+    background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+    border: 2px solid #fff;
+    box-shadow: 0 0 12px rgba(148, 163, 184, 0.6);
+}
+
+.rank-3 {
+    background: linear-gradient(135deg, #f97316 0%, #b45309 100%);
+    border: 2px solid #fff;
+    box-shadow: 0 0 12px rgba(180, 83, 9, 0.6);
+}
+
+.rank-normal {
+    color: #94a3b8;
+    font-family: 'Teko', sans-serif;
+    font-size: 1.6rem;
+}
+
+.player-flex {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 119, 0, 0.5);
+    object-fit: cover;
+    background: #0f172a;
+}
+
+.player-name {
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.stat-num {
+    font-family: 'Teko', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.stat-points {
+    color: #ff9d42;
+    font-size: 1.7rem;
+    font-weight: 700;
+    text-shadow: 0 0 8px rgba(255, 157, 66, 0.3);
+}
+
+.points-wrap {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 80px;
+}
+
+.score-delta {
+    position: absolute;
+    left: 50%;
+    top: -2px;
+    transform: translate(-50%, 0);
+    font-family: 'Teko', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+    z-index: 5;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.95), 0 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+.score-delta.up {
+    color: #4ade80;
+}
+
+.score-delta.down {
+    color: #f87171;
+}
+
+.score-delta.show {
+    animation: scorePop 1.15s ease-out forwards;
+}
+
+@keyframes scorePop {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 8px) scale(0.8);
+    }
+    15% {
+        opacity: 1;
+        transform: translate(-50%, 0) scale(1.18);
+    }
+    55% {
+        opacity: 1;
+        transform: translate(-50%, -18px) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -38px) scale(0.95);
+    }
+}
+
+tr.score-row-up {
+    animation: rowFlashUp 1.15s ease-out;
+}
+
+tr.score-row-down {
+    animation: rowFlashDown 1.15s ease-out;
+}
+
+@keyframes rowFlashUp {
+    0% {
+        background: rgba(74, 222, 128, 0.28);
+    }
+    100% {
+        background: transparent;
+    }
+}
+
+@keyframes rowFlashDown {
+    0% {
+        background: rgba(248, 113, 113, 0.24);
+    }
+    100% {
+        background: transparent;
+    }
+}
+
+.stat-kills {
+    color: #60a5fa;
+}
+
+.stat-deaths {
+    color: #f87171;
+}
+
+.stat-wins {
+    color: #4ade80;
+}
+
+.table-message {
+    text-align: center;
+    color: #94a3b8;
+    padding: 30px;
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-size: 1.05rem;
+}
+
+.table-error {
+    color: #f87171;
+}
+
+.status-line {
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(148, 163, 184, 0.8);
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #4ade80;
+    box-shadow: 0 0 8px rgba(74, 222, 128, 0.8);
+}
+
+.status-dot.offline {
+    background: #f87171;
+    box-shadow: 0 0 8px rgba(248, 113, 113, 0.8);
+}
+
+.status-sep {
+    opacity: 0.5;
+}
+
+@media (max-width: 640px) {
+    .cs2-logo {
+        font-size: 3.5rem;
+    }
+
+    .cs2-title {
+        font-size: 2.8rem;
+    }
+
+    th,
+    td {
+        padding: 8px 10px;
+        font-size: 1rem;
+    }
+
+    .stat-num {
+        font-size: 1.2rem;
+    }
+
+    .stat-points {
+        font-size: 1.4rem;
+    }
+
+    .score-delta {
+        font-size: 1.1rem;
+    }
+
+    .avatar {
+        width: 28px;
+        height: 28px;
+    }
+
+    .status-line {
+        font-size: 0.7rem;
+    }
+}
