@@ -14,13 +14,12 @@
 # misc
 .DS_Store
 
-# local env (secrets / local-only URLs)
+# local env (secrets / local-only URLs) + vercel link state
 .env
-.vercel
 .env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env.*.local
+.vercel
+!.env.example
 
 npm-debug.log*
 yarn-debug.log*
