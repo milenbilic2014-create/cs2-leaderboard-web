@@ -71,6 +71,14 @@ Ako želiš da menjaš API adresu bez rebuild-a, možeš je dodati i kao Vercel
 Environment Variable (`REACT_APP_API_URL`) — CRA env promenljive se ubacuju u
 build, pa je potreban redeploy posle izmene.
 
+## TV režim
+
+Na ekranima širine 900px i više (landscape) raspored se automatski prilagođava
+televizoru: **20 redova staje na jedan ekran bez skrolovanja**, header je
+kompaktan (CS2 i LEADERBOARD u istom redu), a sve veličine se skaliraju sa
+visinom ekrana (1080p, 4K, browser sa trakama). Ako ima više od 20 igrača,
+strane se same smenjuju svakih 12 sekundi, a trenutna strana piše u status liniji.
+
 ## Struktura
 
 ```
@@ -83,6 +91,7 @@ src/
     LeaderboardTable.js        tabela, rank značke, redovi, delta animacija
   hooks/
     useLeaderboard.js          polling, sortiranje, računanje delta
+    useTvMode.js               detekcija TV/velikog ekrana (matchMedia)
   lib/
     api.js                     URL-ovi i fetch
     score.js                   bodovi i sortiranje

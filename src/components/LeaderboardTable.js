@@ -55,7 +55,7 @@ function PlayerRow({ player, rank, delta }) {
     );
 }
 
-export default function LeaderboardTable({ players, loading, error, deltas }) {
+export default function LeaderboardTable({ players, loading, error, deltas, rankOffset = 0 }) {
     let body;
 
     if (players.length === 0) {
@@ -89,7 +89,7 @@ export default function LeaderboardTable({ players, loading, error, deltas }) {
             <PlayerRow
                 key={String(player.steamid)}
                 player={player}
-                rank={index + 1}
+                rank={rankOffset + index + 1}
                 delta={deltas[String(player.steamid)]}
             />
         ));

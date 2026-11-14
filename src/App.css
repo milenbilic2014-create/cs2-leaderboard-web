@@ -347,3 +347,137 @@ tr.score-row-down {
         font-size: 0.7rem;
     }
 }
+
+/*
+ * TV / veliki ekran (landscape): 20 redova mora da stane bez skrolovanja.
+ * Sve dimenzije su u vh/vw da bi se raspored skalirao sa televizorom
+ * (1080p, 4K, browser sa ili bez traka).
+ */
+@media (min-width: 900px) and (min-height: 520px) and (orientation: landscape) {
+    #root {
+        height: 100vh;
+        height: 100dvh;
+        min-height: 0;
+        padding: 1.2vh 1.5vw;
+        overflow: hidden;
+        justify-content: center;
+    }
+
+    .wrapper {
+        width: 100%;
+        max-width: 94vw;
+        max-width: min(94vw, 165vh);
+        height: 100%;
+        justify-content: center;
+    }
+
+    .header-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.4vw;
+        margin-bottom: 1.2vh;
+    }
+
+    .cs2-logo {
+        font-size: 5.2vh;
+        letter-spacing: 0.25vw;
+    }
+
+    .cs2-title {
+        font-size: 4.2vh;
+        letter-spacing: 0.45vw;
+    }
+
+    .weapons-divider {
+        margin-top: 0;
+        gap: 0.9vw;
+        font-size: 1.5vh;
+    }
+
+    .board-card {
+        flex: 0 0 auto;
+    }
+
+    table {
+        table-layout: fixed;
+    }
+
+    th {
+        padding: 0.75vh 1vw;
+        font-size: 1.85vh;
+        letter-spacing: 0.15vw;
+    }
+
+    td {
+        padding: 0.5vh 1vw;
+        font-size: 1.7vh;
+    }
+
+    tbody tr {
+        height: 4.05vh;
+    }
+
+    tbody tr:nth-child(even) {
+        background: rgba(255, 255, 255, 0.025);
+    }
+
+    .rank-badge {
+        width: 2.7vh;
+        height: 2.7vh;
+        border-width: 0.18vh;
+        font-size: 1.7vh;
+    }
+
+    .rank-normal {
+        font-size: 1.85vh;
+    }
+
+    .player-flex {
+        gap: 0.8vw;
+    }
+
+    .avatar {
+        width: 2.5vh;
+        height: 2.5vh;
+        border-radius: 0.55vh;
+    }
+
+    .player-name {
+        font-size: 1.7vh;
+        letter-spacing: 0.04vw;
+    }
+
+    .stat-num {
+        font-size: 1.85vh;
+        letter-spacing: 0.05vw;
+    }
+
+    .stat-points {
+        font-size: 2.1vh;
+    }
+
+    .points-wrap {
+        min-width: 5vw;
+    }
+
+    .score-delta {
+        font-size: 1.6vh;
+    }
+
+    .status-line {
+        margin-top: 1vh;
+        font-size: 1.35vh;
+        letter-spacing: 0.12vw;
+    }
+
+    .status-dot {
+        width: 1vh;
+        height: 1vh;
+    }
+
+    .table-message {
+        padding: 4vh 2vw;
+        font-size: 1.8vh;
+    }
+}
